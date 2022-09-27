@@ -1,0 +1,16 @@
+from PIL import Image
+from PIL import ImageFont
+from PIL import ImageDraw
+from render.utils.text_align import get_text_align
+
+img = Image.open("themes/1.png")
+font = ImageFont.truetype("fonts/font1.ttf", 180)
+
+width, height = 1024, 1024
+
+draw = ImageDraw.Draw(img)
+
+msg = "Himmelberg"
+
+draw.text(get_text_align(msg, font, (1024, 1024)), msg, (0, 0, 0), font=font)
+img.save("test.png")
