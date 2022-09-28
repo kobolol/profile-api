@@ -18,10 +18,8 @@ def create_pic():
     return send_file(filename, mimetype='image/gif')
 
 
-if __name__ == "__main__":
-    dirs = 'render/outputs'
-    for f in os.listdir(dirs):
-        os.remove(os.path.join(dirs, f))
-
-    themes = load_themes()
-    app.run()
+dirs = 'render/outputs'
+for f in os.listdir(dirs):
+    os.remove(os.path.join(dirs, f))
+themes = load_themes()
+app.run()
