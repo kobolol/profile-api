@@ -24,4 +24,4 @@ if __name__ == "__main__":
         os.remove(os.path.join(dirs, f))
 
     themes = load_themes()
-    app.run(port=888)
+    app.run()
