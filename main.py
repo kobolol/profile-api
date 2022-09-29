@@ -3,7 +3,11 @@ from render.initer import load_themes, render_pic
 import os
 
 THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
+dirs = os.path.join(THIS_FOLDER, "render/outputs")
+for f in os.listdir(dirs):
+        os.remove(os.path.join(dirs, f))
 
+themes = load_themes(THIS_FOLDER)
 
 app = Flask(__name__)
 
@@ -22,8 +26,4 @@ def create_pic():
 
 
 if __name__ == "__main__":
-    dirs = os.path.join(THIS_FOLDER, "render/outputs")
-    for f in os.listdir(dirs):
-        os.remove(os.path.join(dirs, f))
-    themes = load_themes(THIS_FOLDER)
     app.run()
