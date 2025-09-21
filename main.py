@@ -26,4 +26,5 @@ def create_pic():
 
 
 if __name__ == "__main__":
-    app.run()
+    # Bind to all interfaces so the API is reachable outside the container/host.
+    app.run(host="0.0.0.0")
